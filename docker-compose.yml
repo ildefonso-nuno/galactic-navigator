@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - ./navigator-back/mongo-init:/docker-entrypoint-initdb.d
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+  backend:
+    build: ./navigator-back/.
+    restart: always
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://root:root@mongo:27017/starmap?authSource=admin
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./navigator-front/.
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  mongo-data:
+    driver: local
