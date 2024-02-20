@@ -25,3 +25,9 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+navigator-back/.idea/compiler.xml
+
+# Remove Project Build folders
+*/navigator-back/.DS_Store
+**/navigator-back/.idea/
+**/navigator-back/target/
