@@ -11,8 +11,8 @@ permissions:
   actions: 'read'
 
 jobs:
-  deploy:
-    name: deploy infrastructure
+  build:
+    name: build docker images
     runs-on: ubuntu-latest
 
     steps:
