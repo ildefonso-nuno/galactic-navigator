@@ -15,7 +15,7 @@ Ensure you have the following installed:
 
 1. **Clone the repository** to your local machine:
    ```sh
-   git clone https://github.com/yourusername/galactic-navigator.git
+   git clone https://github.com/ildefonso-nuno/galactic-navigator.git
 
 2. **Navigate** to the project directory:
    ```sh
