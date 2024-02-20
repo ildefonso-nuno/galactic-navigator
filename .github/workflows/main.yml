@@ -1,0 +1,28 @@
+name: galactic-navigator
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: 'read'
+  id-token: 'write'
+  actions: 'read'
+
+jobs:
+  deploy:
+    name: deploy infrastructure
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Docker
+        run: ./docker.sh
