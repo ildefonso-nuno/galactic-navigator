@@ -44,7 +44,6 @@ public class GraphServiceImpl implements GraphService {
     }
 
     @Override
-    @PostConstruct
     public void loadGraphData() {
         // Fetch star systems and routes from MongoDB
         List<StarSystem> systems = starSystemRepository.findAll();

@@ -2,7 +2,7 @@ package org.nildefonso.navigatorback;
 
 import org.junit.jupiter.api.Test;
 
-class GalacticNavigatorApplicationTests {
+class NavigatorBackApplicationTests {
 
 	@Test
 	void contextLoads() {

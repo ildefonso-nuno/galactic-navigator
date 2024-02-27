@@ -31,3 +31,10 @@ navigator-back/.idea/compiler.xml
 */navigator-back/.DS_Store
 **/navigator-back/.idea/
 **/navigator-back/target/
+
+**/.idea/
+/terraform/.terraform/
+/terraform/.terraform.lock.hcl
+/terraform/errored.tfstate
+/terraform/terraform.tfstate
+/terraform/terraform.tfstate.backup

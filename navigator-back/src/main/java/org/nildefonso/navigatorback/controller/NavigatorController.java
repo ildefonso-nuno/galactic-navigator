@@ -24,7 +24,7 @@ import java.util.List;
         name = "Galactic Navigator Service",
         description = "CRUD REST APIs"
 )
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 @AllArgsConstructor
 @RequestMapping("api/navigator")

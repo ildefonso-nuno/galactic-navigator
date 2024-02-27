@@ -14,6 +14,7 @@ services:
   backend:
     build: ./navigator-back/.
     restart: always
+    platform: linux/amd64
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://root:root@mongo:27017/starmap?authSource=admin
       SPRING_PROFILES_ACTIVE: docker

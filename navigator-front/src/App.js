@@ -1,6 +1,5 @@
 import './App.css';
 import * as React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import StarSystemsList from './components/StarSystemsList';
 import RoutesList from './components/RoutesList';
 import CalculateTravelTime from './components/CalculateTravelTime';
@@ -12,7 +11,6 @@ import GalaxyGraph from './components/GalaxyGraph';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Box } from '@mui/material';
 import { Container, Grid } from '@mui/material';
 
 function App() {
