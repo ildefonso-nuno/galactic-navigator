@@ -16,11 +16,12 @@
     "react-force-graph": "^1.44.3",
     "react-router-dom": "^6.22.1",
     "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "dotenv-cli": "^7.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "dotenv -e .env.production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -52,6 +53,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ildefonso-nuno/galactic-navigator/issues"
-  },
-  "homepage": "https://github.com/ildefonso-nuno/galactic-navigator/tree/main#readme"
+  }
 }

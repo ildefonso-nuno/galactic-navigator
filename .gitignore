@@ -38,3 +38,5 @@ navigator-back/.idea/compiler.xml
 /terraform/errored.tfstate
 /terraform/terraform.tfstate
 /terraform/terraform.tfstate.backup
+/navigator-front/node_modules/
+/navigator-front/build/

@@ -10,7 +10,7 @@ function FindRoutesWithinMaxTime() {
     const [routes, setRoutes] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/navigator/starsystems')
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/starsystems`)
             .then(response => {
                 setAvailableStarSystems(response.data.map(system => system.name));
             })
@@ -24,7 +24,7 @@ function FindRoutesWithinMaxTime() {
             return;
         }
 
-        axios.get(`http://localhost:8080/api/navigator/findRoutesWithinMaxTime`, {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/findRoutesWithinMaxTime`, {
             params: {
                 startSystem: startSystem,
                 endSystem: endSystem,

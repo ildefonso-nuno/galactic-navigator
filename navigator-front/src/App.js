@@ -14,11 +14,18 @@ import Typography from '@mui/material/Typography';
 import { Container, Grid } from '@mui/material';
 
 function App() {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
   return (
     <div>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6">Galaxy Navigator</Typography>
+          {backendUrl && (
+              <Typography variant="body1" style={{ marginLeft: '20px' }}>
+                Backend URL: {backendUrl}
+              </Typography>
+          )}
         </Toolbar>
       </AppBar>
       <Container maxWidth="lg" style={{ marginTop: '20px' }}>

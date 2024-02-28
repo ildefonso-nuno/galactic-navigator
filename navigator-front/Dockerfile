@@ -10,18 +10,14 @@ COPY . .
 # Install any needed packages specified in package.json
 RUN npm install
 
+# Additional dependencies
+RUN npm install @mui/material @emotion/react @emotion/styled react-force-graph axios
+
 # Build the React app
 RUN npm run build
 
 # Install `serve` to serve the app on port 80
 RUN npm install -g serve
-
-RUN npm install @mui/material @emotion/react @emotion/styled
-
-RUN npm install react-force-graph
-
-RUN npm install axios
-
 
 # Start the server using `serve`
 CMD ["serve", "-s", "build", "-l", "80"]

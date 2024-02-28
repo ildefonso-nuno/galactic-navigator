@@ -6,7 +6,8 @@ function StarSystemsList() {
   const [starSystems, setStarSystems] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/navigator/starsystems')
+    console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/starsystems`)
       .then(response => {
         setStarSystems(response.data);
       })

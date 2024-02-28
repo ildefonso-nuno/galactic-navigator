@@ -11,7 +11,7 @@ function CalculateTravelTime() {
   const [totalTravelTime, setTravelTime] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/navigator/starsystems')
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/starsystems`)
       .then(response => {
         setAvailableStarSystems(response.data.map(system => system.name));
       })
@@ -41,7 +41,7 @@ function CalculateTravelTime() {
       .map(system => `starSystems=${encodeURIComponent(system)}`)
       .join('&');
 
-    axios.get(`http://localhost:8080/api/navigator/calculateRouteTravelTime?${queryParams}`)
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/calculateRouteTravelTime?${queryParams}`)
       .then(response => {
         setRoute(response.data.route);
         setTravelTime(response.data.totalTravelTime);

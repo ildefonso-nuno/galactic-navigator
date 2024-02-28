@@ -10,7 +10,7 @@ function FindShortestTravelTime() {
     const [totalTravelTime, setTravelTime] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/navigator/starsystems')
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/starsystems`)
             .then(response => {
                 setAvailableStarSystems(response.data.map(system => system.name));
             })
@@ -23,8 +23,7 @@ function FindShortestTravelTime() {
             alert('Please select both start and end star systems.');
             return;
         }
-
-        axios.get(`http://localhost:8080/api/navigator/findShortestTravelTime`, {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/findShortestTravelTime`, {
             params: {
                 startSystem: startSystem,
                 endSystem: endSystem,

@@ -24,4 +24,6 @@ locals {
   alb_frontend_name               = "navigator-frontend-alb"
   frontend_target_group_name      = "navigator-frontend-alb-tg"
   navigator_frontend_service_name = "navigator-frontend-service"
+
+  navigator_frontend_repo_url = "navigator_frontend_repo_url"
 }

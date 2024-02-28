@@ -9,8 +9,9 @@ function GalaxyGraph() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const starSystemsResponse = await axios.get('http://localhost:8080/api/navigator/starsystems');
-        const routesResponse = await axios.get('http://localhost:8080/api/navigator/routes');
+        console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
+        const starSystemsResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/starsystems`);
+        const routesResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/routes`);
 
         const starSystems = starSystemsResponse.data.map(system => ({
           id: system.name,

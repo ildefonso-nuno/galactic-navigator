@@ -6,7 +6,8 @@ function RoutesList() {
   const [routes, setRoutes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/navigator/routes')
+      console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL); // Log the environment variable
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/routes`)
       .then(response => {
         setRoutes(response.data);
       })

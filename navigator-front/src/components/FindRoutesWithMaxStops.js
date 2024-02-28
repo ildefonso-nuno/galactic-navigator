@@ -10,7 +10,7 @@ function FindRoutesWithMaxStops() {
     const [routes, setRoutes] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/api/navigator/starsystems')
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/starsystems`)
             .then(response => {
                 setAvailableStarSystems(response.data.map(system => system.name));
             })
@@ -24,7 +24,7 @@ function FindRoutesWithMaxStops() {
             return;
         }
 
-        axios.get(`http://localhost:8080/api/navigator/findRoutesWithMaxStops`, {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/navigator/findRoutesWithMaxStops`, {
             params: {
                 startSystem: startSystem,
                 endSystem: endSystem,
