@@ -14,7 +14,7 @@ locals {
   navigator_backend_task_name   = "navigator-backend-task"
 
   navigator_frontend_task_family = "navigator-frontend-task"
-  frontend_container_port        = 3000
+  frontend_container_port        = 3001
   navigator_frontend_task_name   = "navigator-frontend-task"
 
   alb_backend_name               = "navigator-backend-alb"

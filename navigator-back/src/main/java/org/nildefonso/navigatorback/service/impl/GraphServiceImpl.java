@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Service
+
 @AllArgsConstructor
 public class GraphServiceImpl implements GraphService {
     private final StarSystemRepository starSystemRepository;
@@ -177,6 +177,7 @@ public class GraphServiceImpl implements GraphService {
     }
 
     private void explorePathsToWeightLimit(Graph<String, DefaultWeightedEdge> graph, String currentVertex, String targetVertex, List<String> currentPath, List<List<String>> paths, double currentWeight, double weightLimit) {
+
         currentPath.add(currentVertex);
 
         if (currentVertex.equals(targetVertex)) {
